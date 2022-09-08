@@ -1,10 +1,9 @@
 ﻿
-
-using System.Globalization;
+// I have JP formatting on my machine, so I need this to get swedish currency formatting.
+using System.Globalization; 
 
 class Program
 {
-
 
     /// <summary>
     /// The main entry point for the application.
@@ -13,8 +12,11 @@ class Program
     {
         UserInput userInput = new UserInput();
 
+        // This is a little bit funny, because it lets you enter any values without warnings... 
         userInput.CollectUserInput();
 
+        // ...and then BAM! it throws all the errors at the user.
+        // - Just like a regular web form from 2010!
         if (userInput.IsValid())
         {
             GenerateOutput(userInput);
@@ -67,7 +69,7 @@ class Program
         // Print the output!
         Console.WriteLine("\n\n-----------------------------");
         Console.WriteLine("\tKundnummer: " + userInput.Get("customerNumber").ParsedInt);
-        Console.WriteLine("\tTotalpris: {0:C2}", total);
+        Console.WriteLine("\tTotalpris: {0:C2}", total); // C2 means "currency with 2 decimals"
         if (excessPrice > 0)
         {
             Console.WriteLine("\tRansoneringsavgift: {0:C2}", excessTotal);

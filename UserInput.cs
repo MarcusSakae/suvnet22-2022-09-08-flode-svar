@@ -2,7 +2,6 @@ class UserInput
 {
     private List<InputField> Fields = new List<InputField>();
 
-
     /// <summary>
     /// Initiate the fields
     /// </summary>
@@ -26,8 +25,6 @@ class UserInput
         return field;
     }
 
-
-
     /// <summary>
     /// Read in the input from the user
     /// </summary>
@@ -47,7 +44,6 @@ class UserInput
             field.Input = Console.ReadLine();
         }
     }
-
 
     /// <summary>
     /// Parses user input to ints
